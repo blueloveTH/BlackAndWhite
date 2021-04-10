@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - L3
+  - Water
+  - UI
+  - L6
+  - L7
+  - L8
+  - L9
+  - L10
+  - L11
+  - L12
+  - Depth Mask
+  - L14
+  - L15
+  - Light2D Trigger
+  - L17
+  - L18
+  - L19
+  - L20
+  - L21
+  - L22
+  - L23
+  - L24
+  - L25
+  - L26
+  - L27
+  - L28
+  - L29
+  - L30
+  - L31
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 4172177081
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 18462619
+    locked: 0
+  - name: Effect
+    uniqueID: 2981783737
+    locked: 0
+  - name: Top
+    uniqueID: 3058265389
+    locked: 0

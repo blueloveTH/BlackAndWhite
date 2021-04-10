@@ -1,0 +1,27 @@
+using UnityEngine;
+
+
+public class CameraFollow : CameraController
+{
+    public Transform target;
+    const float smoothDampTime = 0.32f;
+    private Vector3 currVelocity;
+    [SerializeField] private Vector3 offset;
+    [SerializeField] bool noSmooth;
+
+    public void Reset()
+    {
+        if (target != null)
+            offset = transform.position - target.position;
+    }
+
+    private void LateUpdate()
+    {
+        if (noSmooth)
+        {
+            transform.position = target.position + offset;
+            return;
+        }
+        transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref currVelocity, smoothDampTime);
+    }
+}
