@@ -34,11 +34,9 @@ The branch + ice element = Ice stuff (seems very hard)
 + ATK: 2
 + Effects: Endurance +1, Speed -30%
 
-The branch + water element = Wet Branch
+Water element
 
-+ ATK: 1
-+ Spell: Float Magic (Move objects)
-+ Effects: Recharge
++ +1 endurance for your Branch
 
 
 
