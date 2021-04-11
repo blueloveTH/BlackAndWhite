@@ -45,9 +45,21 @@ Wall
 + HP: 10
 + DEF: 10
 
+
+
 ## Spell System
 
-The player can learn specific spells.
+The branch + fire element = Torch
+
++ ATK: 1
++ Effects: Ignite, Endurance -1
++ Spell: Fire Attack (ATK=3, go back to branch after use)
++ Last for 10s
+
+The branch + ice element = Ice stuff (seems very hard)
+
++ ATK: 2
++ Effects: Endurance +1, Speed -30%
 
 
 
