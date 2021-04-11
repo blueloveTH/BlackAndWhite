@@ -45,7 +45,9 @@ Wall
 + HP: 10
 + DEF: 10
 
+Water element
 
++ +1 endurance for the Branch
 
 ## Spell System
 

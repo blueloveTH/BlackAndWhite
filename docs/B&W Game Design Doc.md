@@ -17,18 +17,25 @@
 
 In this game, the player will control a character with a branch as his weapon to explore the dungeon.
 
++   The Branch has 3 endurance. (-1 for each time you use it)
+
++   Once running out of it, you will lose the Branch.
++   In many case the Branch is necessary to solve puzzle.
+
 The Branch
 
 + ATK: 1
 + Endurance: 3
 
-Water element
-
-+ +1 endurance for your Branch
-
-
-
 The branch's Endurance will be recharged when the player arrive at a checkpoint.
+
+
+
+## A simple start design
+
+![image-20210411202542564](image-20210411202542564.png)
+
+
 
 ## Development Environment
 
