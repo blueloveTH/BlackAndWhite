@@ -7,8 +7,6 @@
 
 ## Level 01
 
-<img src="image-20210412204700799.png" alt="image-20210412204700799" style="zoom: 50%;" />
-
 #### Gameplay related objects
 
 +   The Branch
