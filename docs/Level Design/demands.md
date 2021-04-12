@@ -18,6 +18,8 @@
 +   Gear
 +   NPC
 +   Wall
++   Door
++   Button
 
 #### Decorations
 
