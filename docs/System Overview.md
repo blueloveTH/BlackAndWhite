@@ -32,22 +32,16 @@ Wooden Box
 Stone
 
 + HP: 2
-+ DEF: 1
++ DEF: 0
 
 Metal Box
 
 + HP: 1
-+ DEF: 2
-+ conductor
-
-Wall
-
-+ HP: 10
-+ DEF: 10
++ DEF: 1
 
 Water element
 
-+ +1 endurance for the Branch
++ Recharge the Branch
 
 ## Spell System
 
