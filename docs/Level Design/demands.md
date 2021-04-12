@@ -7,7 +7,7 @@
 
 ## Level 01
 
-![image-20210412204700799](image-20210412204700799.png)
+<img src="image-20210412204700799.png" alt="image-20210412204700799" style="zoom: 50%;" />
 
 #### Gameplay related objects
 
