@@ -4,12 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private PlayerActor actor;
-
-    private void Awake()
-    {
-        actor = transform.parent.GetComponent<PlayerActor>();
-    }
+    [SerializeField] PlayerActor actor;
+    [SerializeField] WeaponSlot weaponSlot;
 
     private void Start()
     {
@@ -22,5 +18,10 @@ public class PlayerController : MonoBehaviour
         float v = Input.GetAxisRaw("Vertical");
 
         actor.velocity = new Vector2(h, v) * actor.speed;
+
+        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.K))
+        {
+            weaponSlot.Attack();
+        }
     }
 }

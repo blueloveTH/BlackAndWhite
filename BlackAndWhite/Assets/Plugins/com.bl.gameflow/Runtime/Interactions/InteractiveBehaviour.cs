@@ -33,6 +33,13 @@ namespace GameFlow
             target.OnSignalInternal(signal);
         }
 
+        protected virtual GameObject owner => gameObject;
+
+        public T GetCpntInOwner<T>() where T : Component
+        {
+            return owner.GetComponent<T>();
+        }
+
         protected void Emit(Signal signal, InteractiveBehaviour[] targets)
         {
             foreach (var nd in targets)
@@ -87,12 +94,6 @@ namespace GameFlow
         {
             return new Signal(this, name);
         }
-
-        protected Signal Signal(System.Enum e)
-        {
-            return new Signal(this, e.ToStringKey());
-        }
-
 
         public string unitName
         {
