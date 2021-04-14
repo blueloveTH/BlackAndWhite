@@ -23,3 +23,13 @@
 
 +   Floor
 +   ...
+
+
+
+## Level 02
+
++ A Torch (convert from the Branch)
++ Fireball Generator (An object that can shoot fireballs)
++ Fireball
++ Ice Block
++ A Big Monster
