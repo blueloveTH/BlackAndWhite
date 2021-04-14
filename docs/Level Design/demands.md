@@ -29,7 +29,7 @@
 ## Level 02
 
 + A Torch (convert from the Branch)
-+ Fireball Generator (An object that can shoot fireballs)
++ Fireball Generator (An object that can shoot with fireballs)
 + Fireball
 + Ice Block
-+ A Big Monster
++ One or two big monsters
