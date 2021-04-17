@@ -13,7 +13,7 @@ public class WeaponTriggerPoint : InteractiveBehaviour
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
-    public void SignalTarget()
+    public bool SignalTarget()
     {
         Collider2D c2d = Physics2D.OverlapCircle(transform.position, radius, layers);
         if (c2d != null)
@@ -21,10 +21,11 @@ public class WeaponTriggerPoint : InteractiveBehaviour
             var sig = Signal("player_atk");
             sig["ATK"] = 1;
             Emit(sig, c2d.gameObject);
+            return true;
         }
         else
         {
-            print("Nothing.");
+            return false;
         }
     }
 }

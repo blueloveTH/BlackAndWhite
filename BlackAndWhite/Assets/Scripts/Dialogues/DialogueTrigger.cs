@@ -12,6 +12,9 @@ public class DialogueTrigger : InteractiveBehaviour
     {
         PlayerController.main.enabled = false;
         var task = DialogueBox.main.DisplayInfo(dialogues);
-        task.onComplete += () => PlayerController.main.enabled = true;
+        task.onComplete += () =>
+        {
+            PlayerController.main.enabled = true;
+        };
     }
 }

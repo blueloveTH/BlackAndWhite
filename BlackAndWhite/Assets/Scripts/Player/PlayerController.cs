@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameFlow;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,9 +34,36 @@ public class PlayerController : MonoBehaviour
 
         actor.Move(h, v);
 
-        if(Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.K))
+        HandleATK();
+    }
+
+    private ProgressDelayTask delayTask;
+    [SerializeField] Image iconImage;
+
+    private void HandleATK()
+    {
+        if (delayTask.IsPlaying())
         {
-            weaponSlot.Attack();
+            if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.K))
+                delayTask.Kill();
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.K))
+        {
+            if (weaponSlot.CanAttack())
+            {
+                delayTask = Task.ProgressDelay(0.8f);
+                delayTask.onComplete += () =>
+                {
+                    iconImage.fillAmount = 0;
+                    weaponSlot.Attack();
+                };
+
+                delayTask.onKill += () => iconImage.fillAmount = 0;
+                delayTask.onUpdate += (x) => iconImage.fillAmount = x;
+                delayTask.Play();
+            }
         }
     }
 }

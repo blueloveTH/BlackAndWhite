@@ -9,22 +9,22 @@ using UnityEngine.UI;
 public class WeaponSlot : MonoBehaviour
 {
     public WeaponTriggerPoint wtp;
-    [SerializeField] Image iconImage;
+    PlayerBattleModel model;
 
-    public bool isReady = true;
+    private void Awake()
+    {
+        model = GetComponentInParent<PlayerBattleModel>();
+    }
+
+    public bool CanAttack()
+    {
+        if (model.bubbleCount == 0) return false;
+        if (wtp == null) return false;
+        return true;
+    }
 
     public void Attack()
     {
-        if (wtp == null || !isReady) return;
-        isReady = false;
-
-        // do attack here
-        print("Attack!");
-        wtp.SignalTarget();
-
-        var t = Task.ProgressDelay(0.75f);
-        t.onComplete += () => isReady = true;
-        t.onUpdate += (x) => iconImage.fillAmount = x;
-        t.Play();
+        if(wtp.SignalTarget()) model.bubbleCount -= 1;
     }
 }

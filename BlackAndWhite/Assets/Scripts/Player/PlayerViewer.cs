@@ -5,17 +5,30 @@ using UnityEngine;
 
 public class PlayerViewer : MonoBehaviour
 {
-    [Header("Lightness")]
-    [SerializeField] Lightness lightness;
-    [SerializeField] TextMeshProUGUI lightnessTextMesh;
+    PlayerBattleModel model;
+    [SerializeField] GameObject parentGo;
 
     private void Awake()
     {
-        lightness.OnLightChange += Lightness_OnLightChange;
+        model = GetComponentInParent<PlayerBattleModel>();
+        model.onBubbleChange += Model_onBubbleChange;
     }
 
-    private void Lightness_OnLightChange()
+    private void Model_onBubbleChange(int value)
     {
-        lightnessTextMesh.text = string.Format("Light: {0}", lightness.lightCount);
+        int delta = parentGo.transform.childCount - value;
+        if (delta > 0)
+        {
+            for (int i = 0; i < delta; i++)
+                Destroy(parentGo.transform.GetChild(0).gameObject);
+        }
+        else
+        {
+            var prefab = parentGo.transform.GetChild(0).gameObject;
+            for (int i = 0; i < -delta; i++)
+            {
+                Instantiate(prefab, parentGo.transform);
+            }
+        }
     }
 }
