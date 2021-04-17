@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 367918586}
   - component: {fileID: 367918585}
   m_Layer: 5
-  m_Name: Weapon UI
+  m_Name: Weapon Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4539,6 +4539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wtp: {fileID: 805561943}
+  iconImage: {fileID: 367918585}
   isReady: 1
 --- !u!1 &1260465605
 GameObject:
