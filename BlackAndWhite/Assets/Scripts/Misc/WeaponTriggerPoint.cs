@@ -22,5 +22,9 @@ public class WeaponTriggerPoint : InteractiveBehaviour
             sig["ATK"] = 1;
             Emit(sig, c2d.gameObject);
         }
+        else
+        {
+            print("Nothing.");
+        }
     }
 }

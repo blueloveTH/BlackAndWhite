@@ -32,6 +32,8 @@ public class PlayerActor : RigidbodyActor2D
                 dir.y = 0;
             else
                 dir.x = 0;
+
+            weaponSlot.transform.right = new Vector3(dir.x, dir.y);
         }
 
         animator.SetBool("isWalking", isWalking);
@@ -43,6 +45,6 @@ public class PlayerActor : RigidbodyActor2D
     {
         animator.SetBool("isWalking", false);
         animator.SetInteger("dir_x", 0);
-        animator.SetInteger("dir_y", 0);
+        animator.SetInteger("dir_y", 0); 
     }
 }
