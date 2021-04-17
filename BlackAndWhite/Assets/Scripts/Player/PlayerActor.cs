@@ -7,13 +7,42 @@ public class PlayerActor : RigidbodyActor2D
     public float speed = 5;
     [SerializeField] SpriteRenderer spRenderer;
     [SerializeField] WeaponSlot weaponSlot;
+    [SerializeField] Animator animator;
+
+    public static int Sign(float x)
+    {
+        if (Mathf.Approximately(x, 0))
+            return 0;
+        return (int)Mathf.Sign(x);
+    }
+
+    public void Move(float h, float v)
+    {
+        velocity = new Vector2(h, v) * speed;
+
+        bool isWalking = velocity.sqrMagnitude > 1e-3;
+
+        Vector2Int dir = Vector2Int.zero;
+        if (isWalking)
+        {
+            dir.x = Sign(velocity.x);
+            dir.y = Sign(velocity.y);
+
+            if (Mathf.Abs(dir.x) >= Mathf.Abs(dir.y))
+                dir.y = 0;
+            else
+                dir.x = 0;
+        }
+
+        animator.SetBool("isWalking", isWalking);
+        animator.SetInteger("dir_x", dir.x);
+        animator.SetInteger("dir_y", dir.y);
+    }
 
     protected override void InternalUpdate()
     {
-        if (Mathf.Abs(velocity.x) > 0.01f)
-        {
-            spRenderer.flipX = Mathf.Sign(velocity.x) < 0;
-            weaponSlot.transform.localScale = new Vector3(Mathf.Sign(velocity.x), 1, 1);
-        }
+        animator.SetBool("isWalking", false);
+        animator.SetInteger("dir_x", 0);
+        animator.SetInteger("dir_y", 0);
     }
 }

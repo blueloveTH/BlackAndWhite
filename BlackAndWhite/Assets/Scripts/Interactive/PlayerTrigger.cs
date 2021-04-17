@@ -5,7 +5,7 @@ using GameFlow;
 
 public class PlayerTrigger : InteractiveBehaviour
 {
-    protected override GameObject owner => transform.parent.gameObject;
+    public override GameObject owner => transform.parent.gameObject;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

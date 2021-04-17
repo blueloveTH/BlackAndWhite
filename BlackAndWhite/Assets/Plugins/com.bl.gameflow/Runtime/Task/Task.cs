@@ -176,13 +176,10 @@ namespace GameFlow
             return new WaitEventTask(e);
         }
 
-        /// <summary>
-        /// 创建任务：空任务
-        /// </summary>
-        public static EmptyTask Empty()
-        {
-            return new EmptyTask();
-        }
+        //public static EmptyTask Empty()
+        //{
+        //    return new EmptyTask();
+        //}
 
         #endregion
 

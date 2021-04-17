@@ -7,26 +7,18 @@ using UnityEngine.Playables;
 
 public class WeaponSlot : MonoBehaviour
 {
-    public Weapon weapon;
-
-    private PlayableDirector director;
-
-
-    private void Awake()
-    {
-        director = GetComponent<PlayableDirector>();
-    }
+    public WeaponTriggerPoint wtp;
 
     public bool isReady = true;
 
     public void Attack()
     {
-        if (weapon == null || !isReady) return;
+        if (wtp == null || !isReady) return;
+        isReady = false;
 
         // do attack here
         print("Attack!");
-
-        director.Play();
+        wtp.SignalTarget();
 
         Task.Delay(0.75f).OnComplete(() => isReady = true).Play();
     }

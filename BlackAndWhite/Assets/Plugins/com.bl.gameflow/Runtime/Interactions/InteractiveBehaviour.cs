@@ -33,7 +33,7 @@ namespace GameFlow
             target.OnSignalInternal(signal);
         }
 
-        protected virtual GameObject owner => gameObject;
+        public virtual GameObject owner => gameObject;
 
         public T GetCpntInOwner<T>() where T : Component
         {
