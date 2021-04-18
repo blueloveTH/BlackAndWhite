@@ -17,6 +17,7 @@ public class CameraFollow : CameraController
 
     private void LateUpdate()
     {
+        if (target == null) return;
         if (noSmooth)
         {
             transform.position = target.position + offset;

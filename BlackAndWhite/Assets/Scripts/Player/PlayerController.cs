@@ -34,8 +34,7 @@ public class PlayerController : MonoBehaviour
 
         if (delayTask.IsPlaying())
         {
-            h *= 0.3f;
-            v *= 0.3f;
+            h = v = 0;
         }
             
 

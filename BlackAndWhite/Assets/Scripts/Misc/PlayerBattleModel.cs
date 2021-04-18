@@ -26,7 +26,8 @@ public class PlayerBattleModel : BattleModel
 
     public override void OnDeath()
     {
-        ObjectFX.Destroy(gameObject);
+        HP = 1;
+        transform.position = Checkpoint.main.position;
         Debug.Log("You failed!");
     }
 }
