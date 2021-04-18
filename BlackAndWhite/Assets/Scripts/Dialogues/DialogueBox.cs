@@ -31,7 +31,7 @@ public class DialogueBox : MonoBehaviour
 
     bool CanContinue()
     {
-        return Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0);
+        return Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0);
     }
 
     //bool CanSkip()
@@ -45,7 +45,7 @@ public class DialogueBox : MonoBehaviour
         {
             txt.text = list[i];
             yield return new WaitUntil(CanContinue);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.1f);
         }
 
         cgGroup.alpha = 0;

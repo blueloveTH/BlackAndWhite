@@ -31,4 +31,8 @@ public class AnimTweenerMotion : AnimMotion
         }
     }
 
+    void OnDestroy()
+    {
+        transform.DOKill();
+    }
 }

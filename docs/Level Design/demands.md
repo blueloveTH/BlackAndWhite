@@ -33,3 +33,14 @@
 + Fireball
 + Ice Block
 + One or two big monsters
+
+
+
+## SFX
+
++   On air bubble burst
++   On box destroy
++   On gear hitting player
++   On picking crystal
++   On player walking
+

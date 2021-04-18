@@ -50,12 +50,12 @@ public class PlayerController : MonoBehaviour
     {
         if (delayTask.IsPlaying())
         {
-            if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.K))
+            if (Input.GetKeyUp(KeyCode.K))
                 delayTask.Kill();
             return;
         }
 
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             if (weaponSlot.CanAttack())
             {

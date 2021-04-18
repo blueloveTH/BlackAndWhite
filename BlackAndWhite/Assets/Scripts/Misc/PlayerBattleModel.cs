@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class PlayerBattleModel : BattleModel
 {
+    public static PlayerBattleModel main { get; private set; }
+
+    private void Awake()
+    {
+        main = this;
+    }
+
     public int _bubbleCount = 3;
 
     public event System.Action<int> onBubbleChange;
@@ -26,8 +33,24 @@ public class PlayerBattleModel : BattleModel
 
     public override void OnDeath()
     {
+        Respawn();
+        Debug.Log("You failed!");
+    }
+
+    int recordMana = 3;
+
+    public void Record()
+    {
+        recordMana = bubbleCount;
+    }
+
+    public void Respawn()
+    {
         HP = 1;
         transform.position = Checkpoint.main.position;
-        Debug.Log("You failed!");
+
+        Checkpoint.main.RenewScene();
+
+        bubbleCount = recordMana;
     }
 }

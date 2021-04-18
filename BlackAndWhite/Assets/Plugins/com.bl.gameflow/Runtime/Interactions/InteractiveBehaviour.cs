@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameFlow
 {
-    public class SlotInfo
+    public struct SlotInfo
     {
         public Action<Signal> slot;
         public Func<Signal, bool> filter;
@@ -115,7 +115,7 @@ namespace GameFlow
                 SlotMethod slm = m.GetCustomAttribute<SlotMethod>(true);
                 if (slm != null)
                 {
-                    Action<Signal> slot = (signal) => SendMessage(m.Name, signal, SendMessageOptions.RequireReceiver);
+                    Action<Signal> slot = (signal) => m.Invoke(this, new object[] { signal });
                     infos.Add(new SlotInfo(slot, slm.Filter));
                 }
             }
