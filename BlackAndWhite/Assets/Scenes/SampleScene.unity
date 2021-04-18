@@ -4478,7 +4478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogues:
-  - You are trapped in a weird castle.
+  - You were trapped in a weird castle.
   - However, your only weapon has lost.
   - But don't worry.
   - There is a magic would help.

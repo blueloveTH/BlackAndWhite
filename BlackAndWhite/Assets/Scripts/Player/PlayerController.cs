@@ -32,6 +32,13 @@ public class PlayerController : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
+        if (delayTask.IsPlaying())
+        {
+            h *= 0.3f;
+            v *= 0.3f;
+        }
+            
+
         actor.Move(h, v);
 
         HandleATK();
