@@ -690,7 +690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4970891413720731633, guid: a492ee4bbe222c544a3dafa09b0bb6d3, type: 3}
       propertyPath: m_Name
-      value: Water Element (2)
+      value: Crystal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a492ee4bbe222c544a3dafa09b0bb6d3, type: 3}
@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  sfx: {fileID: 0}
 --- !u!58 &879536889
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1192,6 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  sfx: {fileID: 0}
 --- !u!1 &2075567948
 GameObject:
   m_ObjectHideFlags: 0

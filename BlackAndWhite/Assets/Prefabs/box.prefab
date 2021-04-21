@@ -123,3 +123,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 1
+  sfx: {fileID: 8300000, guid: cd4be9f9c6e6fad448239ff48babe9d1, type: 3}

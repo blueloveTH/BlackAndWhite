@@ -547,7 +547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4970891413720731633, guid: a492ee4bbe222c544a3dafa09b0bb6d3, type: 3}
       propertyPath: m_Name
-      value: Water Element
+      value: Crystal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a492ee4bbe222c544a3dafa09b0bb6d3, type: 3}

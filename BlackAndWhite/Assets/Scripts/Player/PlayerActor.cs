@@ -9,6 +9,8 @@ public class PlayerActor : RigidbodyActor2D
     [SerializeField] WeaponSlot weaponSlot;
     [SerializeField] Animator animator;
 
+    [SerializeField] AudioSource stepSource;
+
     public static int Sign(float x)
     {
         if (Mathf.Approximately(x, 0))
@@ -39,12 +41,14 @@ public class PlayerActor : RigidbodyActor2D
         animator.SetBool("isWalking", isWalking);
         animator.SetInteger("dir_x", dir.x);
         animator.SetInteger("dir_y", dir.y);
+
+        stepSource.mute = !isWalking;
     }
 
     protected override void InternalUpdate()
     {
         animator.SetBool("isWalking", false);
         animator.SetInteger("dir_x", 0);
-        animator.SetInteger("dir_y", 0); 
+        animator.SetInteger("dir_y", 0);
     }
 }

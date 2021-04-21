@@ -9,6 +9,8 @@ public class DialogueBox : MonoBehaviour
     public static DialogueBox main { get; private set; }
     private CanvasGroup cgGroup;
 
+    [SerializeField] AudioClip textTrFx;
+
     private void Awake()
     {
         main = this;
@@ -43,6 +45,7 @@ public class DialogueBox : MonoBehaviour
     {
         for (int i = 0; i < list.Count; i++)
         {
+            SFX.Play(textTrFx);
             txt.text = list[i];
             yield return new WaitUntil(CanContinue);
             yield return new WaitForSeconds(0.1f);

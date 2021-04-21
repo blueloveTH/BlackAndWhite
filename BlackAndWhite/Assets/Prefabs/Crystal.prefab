@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2498876756010529371}
   - component: {fileID: 4970891413720731634}
   m_Layer: 0
-  m_Name: Water Element
+  m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d244dfce22f42ad4eb644b4f9c144a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sfx: {fileID: 8300000, guid: cbf22a78ac4978d4f931eacb94d6b777, type: 3}
 --- !u!114 &2498876756010529371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3d6944847d51f489eff186847577df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: {x: 0.75, y: 1.1}
 --- !u!60 &4970891413720731634
 PolygonCollider2D:
   m_ObjectHideFlags: 0

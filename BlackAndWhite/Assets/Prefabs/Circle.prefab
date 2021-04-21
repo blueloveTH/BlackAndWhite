@@ -266,6 +266,7 @@ MonoBehaviour:
   onTeleport:
     m_PersistentCalls:
       m_Calls: []
+  sfx: {fileID: 8300000, guid: b7b9ecd200fbe9141b16402391a1a32b, type: 3}
   _isLocked: 0
 --- !u!58 &227029590
 CircleCollider2D:

@@ -8,6 +8,8 @@ public class WeaponTriggerPoint : InteractiveBehaviour
     [SerializeField] float radius = 0.5f;
     [SerializeField] LayerMask layers = -1;
 
+    [SerializeField] AudioClip sfx;
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, radius);
@@ -15,6 +17,7 @@ public class WeaponTriggerPoint : InteractiveBehaviour
 
     public bool SignalTarget()
     {
+        SFX.Play(sfx);
         Collider2D c2d = Physics2D.OverlapCircle(transform.position, radius, layers);
         if (c2d != null)
         {

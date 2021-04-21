@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerActor actor;
     [SerializeField] WeaponSlot weaponSlot;
 
+    [SerializeField] AudioClip chargeFx;
+
     private void Start()
     {
         main = this;
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private ProgressDelayTask delayTask;
-    [SerializeField] Image iconImage;
+    [SerializeField] ChargeProgress chargeProgress;
 
     private void HandleATK()
     {
@@ -62,12 +64,13 @@ public class PlayerController : MonoBehaviour
                 delayTask = Task.ProgressDelay(0.8f);
                 delayTask.onComplete += () =>
                 {
-                    iconImage.fillAmount = 0;
+                    chargeProgress.SetValue(0);
                     weaponSlot.Attack();
                 };
 
-                delayTask.onKill += () => iconImage.fillAmount = 0;
-                delayTask.onUpdate += (x) => iconImage.fillAmount = x;
+                delayTask.onPlay += () => SFX.Play(chargeFx);
+                delayTask.onKill += () => chargeProgress.SetValue(0);
+                delayTask.onUpdate += (x) => chargeProgress.SetValue(x);
                 delayTask.Play();
             }
         }

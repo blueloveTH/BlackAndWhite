@@ -9,6 +9,8 @@ public class CircleTeleport : InteractiveBehaviour
     [SerializeField] Transform target;
     [SerializeField] UnityEvent onTeleport;
 
+    [SerializeField] AudioClip sfx;
+
     [SerializeField] bool _isLocked = false;
 
     public bool isLocked
@@ -44,8 +46,9 @@ public class CircleTeleport : InteractiveBehaviour
             MessageUI.main.Display("You need at least 1 mana to teleport.");
             return;
         }
-            
 
+
+        SFX.Play(sfx);
         PlayerBattleModel.main.bubbleCount -= 1;
 
         sig.source.owner.transform.position = target.position;
