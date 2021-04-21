@@ -45,7 +45,7 @@ public class DialogueBox : MonoBehaviour
     {
         for (int i = 0; i < list.Count; i++)
         {
-            SFX.Play(textTrFx);
+            SFX.Play(textTrFx, 0.3f);
             txt.text = list[i];
             yield return new WaitUntil(CanContinue);
             yield return new WaitForSeconds(0.1f);
