@@ -11,9 +11,11 @@ public class LoadAllScenes : MonoBehaviour
     // Start is called before the first
     private void Awake()
     {
+#if !UNITY_EDITOR
         foreach (var item in scenes)
         {
             SceneManager.LoadScene(item, LoadSceneMode.Additive);
         }
+#endif
     }
 }

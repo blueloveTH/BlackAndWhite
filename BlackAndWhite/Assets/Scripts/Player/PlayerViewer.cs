@@ -18,7 +18,7 @@ public class PlayerViewer : MonoBehaviour
     private void Model_onBubbleChange(int value)
     {
         Color colorEnabled = new Color(1, 1, 1, 1f);
-        Color colorDisabled = new Color(1, 1, 1, 0.1f);
+        Color colorDisabled = new Color(1, 1, 1, 0.3f);
 
         for (int i = 0; i < value; i++)
             parentGo.transform.GetChild(i).GetComponent<Image>().color = colorEnabled;

@@ -43,7 +43,7 @@ public class CircleTeleport : InteractiveBehaviour
         }
         if (PlayerBattleModel.main.bubbleCount < 1)
         {
-            MessageUI.main.Display("You need at least 1 mana to teleport.");
+            MessageUI.main.Display("You need at least 1 bubble to teleport.");
             return;
         }
 

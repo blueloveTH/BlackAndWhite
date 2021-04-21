@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameFlow;
+using UnityEngine.Playables;
 
 public class WeaponTriggerPoint : InteractiveBehaviour
 {
     [SerializeField] float radius = 0.5f;
     [SerializeField] LayerMask layers = -1;
-
-    [SerializeField] AudioClip sfx;
+    [SerializeField] GameObject vfx;
 
     private void OnDrawGizmosSelected()
     {
@@ -17,7 +17,9 @@ public class WeaponTriggerPoint : InteractiveBehaviour
 
     public bool SignalTarget()
     {
-        SFX.Play(sfx);
+        GameObject go = Instantiate(vfx, transform.position, Quaternion.identity);
+        Destroy(go, 3f);
+
         Collider2D c2d = Physics2D.OverlapCircle(transform.position, radius, layers);
         if (c2d != null)
         {
