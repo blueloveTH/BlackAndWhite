@@ -25,4 +25,10 @@ public class CameraFollow : CameraController
         }
         transform.position = Vector3.SmoothDamp(transform.position, target.position + offset, ref currVelocity, smoothDampTime);
     }
+
+    public void Align()
+    {
+        if (target)
+            transform.position = target.position + offset;
+    }
 }

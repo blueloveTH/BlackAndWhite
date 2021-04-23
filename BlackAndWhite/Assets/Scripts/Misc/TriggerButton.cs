@@ -11,6 +11,7 @@ public class TriggerButton : InteractiveBehaviour
     [SerializeField] GameObject enabledGo;
 
     [SerializeField] UnityEvent onActivate;
+    [SerializeField] AudioClip sfx;
 
     private void Awake()
     {
@@ -25,7 +26,9 @@ public class TriggerButton : InteractiveBehaviour
     [SlotMethod("player_hit")]
     void OnSignal(Signal sig)
     {
+        if (machine.currentNode.CompareName("1")) return;
         machine.Enter("1");
+        SFX.Play(sfx);
         onActivate?.Invoke();
     }
 }

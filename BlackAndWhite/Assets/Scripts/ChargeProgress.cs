@@ -22,6 +22,8 @@ public class ChargeProgress : MonoBehaviour
 
     public void SetValue(float t)
     {
+        if (!cgGroup) return;
+        
         if (t == 0)
         {
             cgGroup.alpha = 0;

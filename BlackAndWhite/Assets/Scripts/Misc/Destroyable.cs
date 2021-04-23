@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameFlow;
+using DG.Tweening;
 
 public class Destroyable : InteractiveBehaviour
 {
@@ -22,6 +23,9 @@ public class Destroyable : InteractiveBehaviour
             {
                 GetComponent<SpriteRenderer>().sprite = debrisSp;
                 enabled = false;
+                transform.DOKill();
+                transform.rotation = Quaternion.identity;
+                Destroy(GetComponent<AnimRotate>());
                 Destroy(GetComponent<Collider2D>());
             }
             else

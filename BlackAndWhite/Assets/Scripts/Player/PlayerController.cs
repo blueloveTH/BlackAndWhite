@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         actor.OnUpdate -= Actor_OnUpdate;
         actor.Move(0, 0);
+        delayTask?.Kill();
     }
 
     private void Actor_OnUpdate()

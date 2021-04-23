@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5415295323074540917, guid: 25badeb9731c32c41a82b8245639b5a9, type: 3}
-  interval: 2
+  startTime: 0
+  interval: 1.75
   shootPoint: {fileID: 3858691879358901190}
 --- !u!212 &3858691878623364158
 SpriteRenderer:

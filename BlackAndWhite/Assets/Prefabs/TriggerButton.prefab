@@ -145,6 +145,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  sfx: {fileID: 8300000, guid: a1d8ea2d2826c174aa607b2da869b938, type: 3}
 --- !u!61 &6817635066201620611
 BoxCollider2D:
   m_ObjectHideFlags: 0

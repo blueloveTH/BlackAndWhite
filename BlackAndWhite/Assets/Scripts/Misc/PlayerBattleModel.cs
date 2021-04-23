@@ -37,7 +37,7 @@ public class PlayerBattleModel : BattleModel
         gameObject.SetActive(false);
         print("You failed!");
 
-        Task.Delay(1f).OnComplete(() => Respawn()).Play();
+        Task.Delay(1f).OnComplete(() => Checkpoint.main.RenewScene()).Play();
     }
 
     int recordMana = 3;
@@ -52,9 +52,6 @@ public class PlayerBattleModel : BattleModel
         gameObject.SetActive(true);
         HP = 1;
         transform.position = Checkpoint.main.position;
-
-        Checkpoint.main.RenewScene();
-
         bubbleCount = recordMana;
     }
 }
