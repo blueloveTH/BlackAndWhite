@@ -1336,6 +1336,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
+      propertyPath: sfx
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
       propertyPath: _isLocked
       value: 1
       objectReference: {fileID: 0}
@@ -1350,10 +1354,22 @@ PrefabInstance:
     - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
       propertyPath: onTeleport.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1832628991}
+      objectReference: {fileID: 1832628992}
     - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
       propertyPath: onTeleport.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
+      propertyPath: onTeleport.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Win
+      objectReference: {fileID: 0}
+    - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
+      propertyPath: onTeleport.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FinalTest, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 227029592, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
+      propertyPath: onTeleport.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2559122114724212357, guid: 2a324ecc4c410e54d8944070de679e33, type: 3}
       propertyPath: m_Name
