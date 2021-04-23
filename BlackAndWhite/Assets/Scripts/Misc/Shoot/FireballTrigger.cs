@@ -5,16 +5,20 @@ using GameFlow;
 
 public class FireballTrigger : InteractiveBehaviour
 {
+    [SerializeField] GameObject vfx;
+
     private void Awake()
     {
-        Destroy(gameObject, 8f);
+        Destroy(gameObject, 4f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
-    }
+        transform.Find("Vision")?.GetComponent<FadeVision>().DetachAndFade();
 
-    [SlotMethod("player_hit")]
-    void OnPlayerHit(Signal sig) { }
+        gameObject.SetActive(false);
+        Destroy(gameObject, 0.16f);
+
+        Instantiate(vfx, transform.position, transform.rotation); 
+    }
 }

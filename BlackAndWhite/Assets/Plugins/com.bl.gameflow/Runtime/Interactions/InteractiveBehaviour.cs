@@ -69,7 +69,7 @@ namespace GameFlow
 
         internal void OnSignalInternal(Signal signal)
         {
-            if (signal.isBlocked || !isActiveAndEnabled) return;
+            if (signal.isBlocked || !enabled) return;
             if (!CanReceive(signal)) return;
 
             foreach (var item in slotInfos)

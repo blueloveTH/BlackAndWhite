@@ -1,3 +1,4 @@
+using GameFlow;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -33,8 +34,10 @@ public class PlayerBattleModel : BattleModel
 
     public override void OnDeath()
     {
-        Respawn();
-        Debug.Log("You failed!");
+        gameObject.SetActive(false);
+        print("You failed!");
+
+        Task.Delay(1f).OnComplete(() => Respawn()).Play();
     }
 
     int recordMana = 3;
@@ -46,6 +49,7 @@ public class PlayerBattleModel : BattleModel
 
     public void Respawn()
     {
+        gameObject.SetActive(true);
         HP = 1;
         transform.position = Checkpoint.main.position;
 

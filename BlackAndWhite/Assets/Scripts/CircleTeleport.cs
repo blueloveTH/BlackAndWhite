@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class CircleTeleport : InteractiveBehaviour
 {
     [SerializeField] Transform target;
+    [SerializeField] string targetPath;
     [SerializeField] UnityEvent onTeleport;
 
     [SerializeField] AudioClip sfx;
@@ -16,7 +17,8 @@ public class CircleTeleport : InteractiveBehaviour
     public bool isLocked
     {
         get => _isLocked;
-        set{
+        set
+        {
             _isLocked = value;
             transform.Find("LOCK").gameObject.SetActive(value);
         }
@@ -51,7 +53,13 @@ public class CircleTeleport : InteractiveBehaviour
         SFX.Play(sfx);
         PlayerBattleModel.main.bubbleCount -= 1;
 
-        sig.source.owner.transform.position = target.position;
+        Vector3 targetPos = Vector3.zero;
+        if (target != null)
+            targetPos = target.position;
+        if (!string.IsNullOrEmpty(targetPath))
+            targetPos = GameObject.Find(targetPath).transform.position;
+
+        sig.source.owner.transform.position = targetPos;
         onTeleport.Invoke();
     }
 
