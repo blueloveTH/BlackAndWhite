@@ -19,6 +19,8 @@ public class FireballTrigger : InteractiveBehaviour
         gameObject.SetActive(false);
         Destroy(gameObject, 0.16f);
 
-        Instantiate(vfx, transform.position, transform.rotation); 
+        Instantiate(vfx, transform.position, transform.rotation);
+
+        Emit(Signal("player_atk").AddData("ATK", 1), collision.gameObject);
     }
 }

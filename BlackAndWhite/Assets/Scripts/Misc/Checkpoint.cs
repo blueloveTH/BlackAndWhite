@@ -10,6 +10,7 @@ public class Checkpoint : InteractiveBehaviour
     public static Checkpoint main { get; private set; }
     [SerializeField] string sceneName;
     [SerializeField] List<string> unloadScenes;
+    [SerializeField] bool debug = false;
 
     public Vector3 position => transform.position;
 
@@ -18,9 +19,13 @@ public class Checkpoint : InteractiveBehaviour
     {
         if (main == this) return;
 
-        foreach (var s in unloadScenes)
-            SceneManager.UnloadSceneAsync(s);
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        if (!debug)
+        {
+            foreach (var s in unloadScenes)
+                SceneManager.UnloadSceneAsync(s);
+            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        }
+
 
         main = this;
 

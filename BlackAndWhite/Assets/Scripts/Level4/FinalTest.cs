@@ -7,9 +7,22 @@ using DG.Tweening;
 public class FinalTest : InteractiveBehaviour
 {
     [SerializeField] SpriteRenderer maskRenderer;
+    [SerializeField] CircleTeleport circleTeleport;
 
-    private void Start()
+    private int btnCount = 0;
+
+    [SlotMethod("player_hit")]
+    private void OnSignal(Signal sig)
     {
         maskRenderer.DOFade(0, 1f);
+        transform.GetChild(0).gameObject.SetActive(true);
+        enabled = false;
+    }
+
+    public void AddBtnCount()
+    {
+        btnCount++;
+        if (btnCount == 3)
+            circleTeleport.Unlock();
     }
 }
