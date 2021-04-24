@@ -9,13 +9,14 @@ public class Credits : MonoBehaviour
 
     private void Start()
     {
+        /*
         var txts = GetComponentsInChildren<TextMeshProUGUI>();
         string s = "";
         foreach (var item in txts)
         {
             s += item.text + "\n";
         }
-        print(s);
+        print(s);*/
     }
 
     // Update is called once per frame

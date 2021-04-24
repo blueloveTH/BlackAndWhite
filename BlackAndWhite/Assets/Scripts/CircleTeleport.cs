@@ -26,7 +26,9 @@ public class CircleTeleport : InteractiveBehaviour
 
     public void Unlock()
     {
+        if (!isLocked) return;
         isLocked = false;
+        MessageUI.main.Display("The portal is unlocked.");
     }
 
     private void Awake()
@@ -40,7 +42,7 @@ public class CircleTeleport : InteractiveBehaviour
     {
         if (_isLocked)
         {
-            MessageUI.main.Display("The circle is locked.");
+            MessageUI.main.Display("The portal is locked.");
             return;
         }
         if (PlayerBattleModel.main.bubbleCount < 1)

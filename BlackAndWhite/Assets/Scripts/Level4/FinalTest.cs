@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class FinalTest : InteractiveBehaviour
 {
-    [SerializeField] SpriteRenderer maskRenderer;
     [SerializeField] CircleTeleport circleTeleport;
 
     private int btnCount = 0;
@@ -15,7 +14,7 @@ public class FinalTest : InteractiveBehaviour
     [SlotMethod("player_hit")]
     private void OnSignal(Signal sig)
     {
-        maskRenderer.DOFade(0, 1f);
+        GameObject.Find("DarkMask").GetComponent<SpriteRenderer>().DOFade(0, 1f);
         transform.GetChild(0).gameObject.SetActive(true);
         enabled = false;
     }

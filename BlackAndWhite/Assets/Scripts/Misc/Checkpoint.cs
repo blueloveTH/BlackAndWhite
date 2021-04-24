@@ -23,7 +23,7 @@ public class Checkpoint : InteractiveBehaviour
         {
             foreach (var s in unloadScenes)
                 SceneManager.UnloadSceneAsync(s);
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         }
 
 
